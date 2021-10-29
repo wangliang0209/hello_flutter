@@ -52,8 +52,7 @@ class _SubTestState extends State<SubTest> {
             Text(
               'This is flutter 111 route : ${widget.title}',
               style: const TextStyle(
-                  fontSize: 26,
-                  color: Color(0xFFF00F00)
+                  color: Color(0xFF600F00)
               ),
             )
           ],
