@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:hello_flutter/SubTest.dart';
 import 'package:hello_flutter/first_page.dart';
+import 'package:hello_flutter/second_page.dart';
 
 void main() {
   PageVisibilityBinding.instance.addGlobalObserver(AppGlobalPageVisibilityObserver());
@@ -62,12 +63,18 @@ class _MyAppState extends State<MyApp> {
     'firstFirst': (settings, uniqueId) {
       return PageRouteBuilder<dynamic>(
           settings: settings,
-          pageBuilder: (_, __, ___) => FirstFirstRouteWidget());
+          pageBuilder: (_, __, ___) => FirstFirstRouteWidget(params: settings.arguments as Map));
+    },
+    'secondPage': (settings, uniqueId) {
+      return PageRouteBuilder<dynamic>(
+          settings: settings,
+          pageBuilder: (_, __, ___) => SecondRouteWidget());
     },
   };
 
   Route<dynamic>? routeFactory(RouteSettings settings, String? uniqueId) {
     FlutterBoostRouteFactory? func = routerMap[settings.name];
+    Logger.log('WLTest route ${settings.name}');
     if (func == null) {
       return null;
     }

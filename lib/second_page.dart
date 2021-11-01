@@ -3,22 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 
-class FirstFirstRouteWidget extends StatefulWidget {
-
-  const FirstFirstRouteWidget({Key? key, required this.params}) : super(key: key);
-
-  final Map params;
-
+class SecondRouteWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new _FirstFirstRouteWidgetState(params);
+    return new _SecondRouteWidgetState();
   }
 }
 
-class _FirstFirstRouteWidgetState extends State<FirstFirstRouteWidget> {
-  _FirstFirstRouteWidgetState(this.params);
-
-  final Map params;
+class _SecondRouteWidgetState extends State<SecondRouteWidget> {
 
   @override
   void initState() {
@@ -33,7 +25,7 @@ class _FirstFirstRouteWidgetState extends State<FirstFirstRouteWidget> {
   }
 
   @override
-  void didUpdateWidget(FirstFirstRouteWidget oldWidget) {
+  void didUpdateWidget(SecondRouteWidget oldWidget) {
     print('didUpdateWidget');
     super.didUpdateWidget(oldWidget);
   }
@@ -60,11 +52,11 @@ class _FirstFirstRouteWidgetState extends State<FirstFirstRouteWidget> {
             },
             icon: Icon(Icons.arrow_back)
         ),
-        title: Text('First Route'),
+        title: Text('Second Route'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('${params['content'] ?? 'empty'}'),
+          child: Text('Open second route'),
           onPressed: () {
             Logger.log("WLTest open first page again!");
             // FlutterBoost.singleton.open("first").then((Map value){
