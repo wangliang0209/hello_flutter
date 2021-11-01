@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class SubTest extends StatefulWidget {
-  const SubTest({Key? key, required this.title}) : super(key: key);
+  const SubTest({Key key, this.title}) : super(key: key);
 
   final String title;
 
