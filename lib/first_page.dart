@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_boost/flutter_boost.dart';
 
 class FirstFirstRouteWidget extends StatefulWidget {
   @override
@@ -58,7 +59,7 @@ class _FirstFirstRouteWidgetState extends State<FirstFirstRouteWidget> {
         child: ElevatedButton(
           child: Text('Open first route'),
           onPressed: () {
-            print("open first page again!");
+            Logger.log("WLTest open first page again!");
             // FlutterBoost.singleton.open("first").then((Map value){
             //   print("did receive first route result");
             //   print("did receive first route result $value");
