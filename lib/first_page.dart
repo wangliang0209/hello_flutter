@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class FirstFirstRouteWidget extends StatefulWidget {
   @override
@@ -45,6 +46,12 @@ class _FirstFirstRouteWidgetState extends State<FirstFirstRouteWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: new IconButton(
+            onPressed: () => {
+              SystemNavigator.pop()
+            },
+            icon: Icon(Icons.arrow_back)
+        ),
         title: Text('First Route'),
       ),
       body: Center(
